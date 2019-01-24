@@ -17,11 +17,12 @@ getDateObject(){
 }
 
 elementForDisplay(){
+  //why didn't this work with append child
   let div = document.createElement('div');
   div.innerText = `Event: ${this._title} at ${this._eventDate}`
   // let eventElement = document.createTextNode(`)
   // div.appendChild(eventElement)
-  console.log(div)
+  
   return div  
 }
 };
