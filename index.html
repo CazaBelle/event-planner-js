@@ -6,24 +6,55 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="">
   </head>
   <body>
     <h1>Event Planner</h1>
     <!-- <img src="images/princesschar5.png"> -->
-  <form>
-    <input id="textVal" type="text" name="event_title" placeholder="Add Event">
-    <input id="dateVal" type="datetime-local" name="date">
+    <form>
+      <input id="textVal" type="text" name="event_title" placeholder="Add Event">
+      <input id="dateVal" type="datetime-local" name="date">
     <button id="eventButton" type="button">Add</button>
-  </form>
+  
   <div id="eventDiv">
     
   </div>
-  
+  <h3>Forecast</h3>
+      
+    <div class="container">
+        <header class="header">
+          <div class="search">
+            <input type="text" placeholder="Enter City Name" id="search-txt">
+            <!-- a tag prevents the data from being resent -->
+            <a id="search-btn" href="#"><i class="fas fa-search"></i></a>
+          </div>
+        </header>
+        
+      <main id="main">
+        
+        <div class="city-icon">
+          <div class="city-icon-holder">
+          <div id="city-name"></div>
+          <img src="" alt="" id="icon">
+            </div>
+        </div>
+        
+        <div class="temperature">
+          <div id="temp"></div>
+        </div>
+        
+        <div class="humidity">
+          <div id="humidity-div"></div>
+        </div>
+        
+      </main>
+      
+  <script src='https://use.fontawesome.com/releases/v5.0.13/js/all.js'></script>
   <script type="text/javascript" src="src/Event.js" ></script>
   <script type="text/javascript" src="src/EventBoard.js"></script>
+  <script type="text/javascript" src="src/Weather.js"></script>
   <script type="text/javascript" src="src/Interface.js" ></script>
-   
 
   </body>
 </html>

@@ -3,14 +3,14 @@
 //Sort event 
 // display 
 
-
+//Event Planner Interface
 let button
 let text
 let date
 let event 
-let eventNotice
 let events
 let eventBoard = new EventBoard()
+
 
 //make event - can I make this into a function
   button = document.getElementById('eventButton')
@@ -35,3 +35,5 @@ function display(){
 
 
 
+
+  
