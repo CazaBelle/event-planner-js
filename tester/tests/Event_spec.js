@@ -1,8 +1,8 @@
 describe('event', () => {
   it('user can create a new event', () => {
-    var event = new Event('title', 11/09/83)
+    var event = new Event('title', '1983-09-15')
     expect(event._title).toBe('title')
-    expect(event._eventDate).toBe(11/09/83)
+    expect(event._eventDate).toBe('1983-09-15')
   })
 
 
