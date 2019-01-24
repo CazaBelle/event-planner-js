@@ -1,6 +1,7 @@
 
 //Forecast interface
 const appKey = "58753f9b62d28c7582e5b7ee6e6b578b"
+
 let searchButton = document.getElementById("search-btn");
 let searchInput = document.getElementById("search-txt");
 let cityName = document.getElementById("city-name");
@@ -28,9 +29,8 @@ function theResponse(response) {
   humidity.innerHTML = jsonObject.main.humidity + "%";
 }
 
-function httpRequestAsync(url, callback)
-{
-  console.log("hello");
+function httpRequestAsync(url, callback){
+
     var httpRequest = new XMLHttpRequest();
     httpRequest.onreadystatechange = () => { 
         if (httpRequest.readyState == 4 && httpRequest.status == 200)
