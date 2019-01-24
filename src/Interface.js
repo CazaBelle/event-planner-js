@@ -9,7 +9,6 @@ let text
 let date
 let event 
 let eventNotice
-let cheese
 let events
 let eventBoard = new EventBoard()
 

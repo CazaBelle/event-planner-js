@@ -24,5 +24,5 @@ elementForDisplay(){
   // div.appendChild(eventElement)
   
   return div  
-}
+  }
 };

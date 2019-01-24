@@ -30,8 +30,9 @@ class EventBoard {
   }
 
   sortedFutureEvents(){
-    //retunr all future events, sorted by Dates
+    //return all future events, sorted by Dates
     let result = this.sortedEvents()
+    //sort know how to iterate over the array and reshuffle
     result.sort((e1, e2) => {
       let date1 = e1.getDateObject()
       let date2 = e2.getDateObject()
