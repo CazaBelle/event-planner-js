@@ -1,29 +1,53 @@
 class EventBoard {
   constructor(){
-    this._events = [];
+    this._events = this.inStorage()
     // this._future = []
      //why can't this be declared at the constructor
   }
 
+inStorage(){
+  if(!localStorage.getItem('events')){
+    return []
+  } else {
+    return this.storageEventBackToObject(JSON.parse(localStorage.getItem('events')))
+  }
+}
+
   storeEvent(event){
     this._events.push(event)
+    //STEP 1 LOCAL STOREAGE - setItems in events, need to store as a string
+    localStorage.setItem('events', JSON.stringify(this._events))
+    
+  }
+
+  //PART 2 JSON STORAGE turn the string back into EVENT OBJECTS
+  storageEventBackToObject(jsonObject){
+    let eventObjects = []
+ //Need to convert JSON OBJECT to a 
+      jsonObject.forEach(function(event){
+        let eventObject = new Event(event._title, event._eventDate)
+   
+        console.log(eventObject)
+        eventObjects.push(eventObject)
+      })
+    return eventObjects
+   
   }
 
   sortedEvents(){
     let future = []
-    
-    // let now
-    // let eventdDate
+    //
+    let storageArr = this.storageEventBackToObject(JSON.parse(localStorage.getItem('events')))
+   
     //by the date objects
-    this._events.forEach(function(event){
+    storageArr.forEach(function(event){
       let now = new Date();
-      let eventDate = new Date(event.getDate())
-  
+      let eventDate = new Date(event._eventDate)
+      
         if (eventDate > now) {
           future.push(event)
         }
     })
-    
     
     return future;
     
@@ -32,7 +56,7 @@ class EventBoard {
   sortedFutureEvents(){
     //return all future events, sorted by Dates
     let result = this.sortedEvents()
-    //sort know how to iterate over the array and reshuffle
+    //sort knows how to iterate over the array and reshuffle
     result.sort((e1, e2) => {
       let date1 = e1.getDateObject()
       let date2 = e2.getDateObject()
@@ -45,10 +69,8 @@ class EventBoard {
   
   }
 
-  //Cleared the array?
   eventsForDisplay(){
     let newDiv = document.createElement('div');
-    // let event = this._events
     this.sortedFutureEvents().forEach(function(event) {
      let eventHtml = event.elementForDisplay();
       newDiv.appendChild(eventHtml);

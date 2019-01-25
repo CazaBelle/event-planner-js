@@ -1,38 +1,41 @@
-//Plan make event 
-//Store event
-//Sort event 
-// display 
 
+window.onload = function() {
 //Event Planner Interface
-let button
+
 let text
 let date
 let event 
-let events
+
+let button = document.getElementById('eventButton')
+let eventsDiv = document.getElementById('eventDiv')
+
 let eventBoard = new EventBoard()
+
+if (!localStorage.getItem('events')){
+  eventsDiv.innerHTML = "No upcoming events"
+} else {
+  display()
+}
+
 
 
 //make event - can I make this into a function
-  button = document.getElementById('eventButton')
   button.addEventListener('click', function() {
-  text = document.getElementById('textVal').value
-  date = document.getElementById('dateVal').value
-  event = new Event(text, date);
-  //store event in eventlist
-  eventBoard.storeEvent(event);
-  // eventNotice = `Event: ${event.getTitle()} at ${event.getDate()}`
-
-  display();
+    text = document.getElementById('textVal').value
+    date = document.getElementById('dateVal').value
+    event = new Event(text, date);
+    //store event in eventlist
+    eventBoard.storeEvent(event);
+    display();
 })
 
+  function display(){
+    let events = eventBoard.eventsForDisplay();
+    eventsDiv.innerHTML = ''
+    eventsDiv.appendChild(events)
+  }
 
-function display(){
-  let eventsDiv = document.getElementById('eventDiv')
-  let events = eventBoard.eventsForDisplay();
-  eventsDiv.innerHTML = ''
-  eventsDiv.appendChild(events)
 }
-
 
 
 

@@ -33,3 +33,13 @@ Persistent data:
 
 Deploying the app:
 - Look up surge.sh
+
+Latest requirements for the app:
+
+- I want to be able to see an abbreviated 20 characters of the event
+- I want to be able to click on the event text and see the entire event content at its own URL. From there, I should have some way of going back to the main page.
+- I want a "find my location" button, which will ask the browser for my location and automatically fetch the weather at that location
+- I want to see the events in 3 sections, for today, tomorrow and later dates. If there are no events in these sections, they should say something like "No events".
+
+Bonus:
+- Make it look as good as possible!
