@@ -36,7 +36,6 @@ inStorage(){
 
   sortedEvents(){
     let future = []
-    //
     let storageArr = this.storageEventBackToObject(JSON.parse(localStorage.getItem('events')))
    
     //by the date objects
@@ -46,6 +45,9 @@ inStorage(){
       
         if (eventDate > now) {
           future.push(event)
+        }
+        else{
+          return false;
         }
     })
     

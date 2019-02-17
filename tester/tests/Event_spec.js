@@ -1,14 +1,14 @@
 describe('event', () => {
   it('user can create a new event', () => {
-    var event = new Event('title', '1983-09-15')
+    var event = new Event('title', '2019-09-15')
     expect(event._title).toBe('title')
-    expect(event._eventDate).toBe('1983-09-15')
+    expect(event._eventDate).toBe('2019-09-15')
   })
 
+  it('can return false if event has already happened', function(){
+    var eventBoard = new EventBoard
+    var event = new Event('Event in Past', '1983-09-15')
+    expect(eventBoard.sortedEvents(event)).toBe(false)
+  })
 
 })
-
-// describe('error', ()=>{
-//   it('throws an error if num isnt an integer', ()=>{
-//     expect(try_catch(Square, 'a')).to_throw('argument is not a number');
-//   })
