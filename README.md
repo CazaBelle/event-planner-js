@@ -73,7 +73,7 @@ Testing
 
 Demo
 ----
-![Demo Pic](images/event-planner-js.png)
+![Demo Pic](images/event-planner-demo.png)
 
 Deployment instructions
 -----------------------
