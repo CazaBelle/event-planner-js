@@ -23,10 +23,15 @@ getAbbrTitle(){
 elementForDisplay(){
   //why didn't this work with append child
   let div = document.createElement('div');
-  div.innerText = `Event: ${this.getAbbrTitle()} at ${this._eventDate}`
+  let newLink = document.createElement('a')
+  newLink.setAttribute('href', `#${this._title}`)
+
+  console.log(newLink)
+  newLink.innerText = `Event: ${this.getAbbrTitle()} at ${this._eventDate}`
+  // div.innerHTML = `Event: ${this.getAbbrTitle()} at ${this._eventDate}`
   // let eventElement = document.createTextNode(`)
   // div.appendChild(eventElement)
-  
-  return div  
+  div.appendChild(newLink)
+  return div
   }
 };
